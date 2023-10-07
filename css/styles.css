@@ -1,3 +1,7 @@
+.hidden {
+  display: none !important;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
@@ -67,4 +71,21 @@ header {
 .hidden-aresenal {
   color: white;
   text-decoration: none;
+}
+
+#gold-series-view {
+  color: white;
+}
+
+#hidden-arsenal-view {
+  color: white;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 100%;
 }
