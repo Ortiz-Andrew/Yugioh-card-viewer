@@ -7,11 +7,15 @@ goldSeriesLink.addEventListener('click', function (event) {
   event.preventDefault();
   $goldSeriesView.textContent = '';
   renderGoldSeries(GoldSeriesData);
+  $goldSeriesView.style.display = 'block';
+  hiddenArsenalView.style.display = 'none';
 });
 hiddenArsenalLink.addEventListener('click', function (event) {
   event.preventDefault();
   $goldSeriesView.textContent = '';
   renderHiddenArsenal(HiddenArsenalData);
+  $goldSeriesView.style.display = 'none';
+  hiddenArsenalView.style.display = 'block';
 });
 
 const GoldSeriesData = {

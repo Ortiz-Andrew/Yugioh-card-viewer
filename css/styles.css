@@ -97,3 +97,8 @@ header {
 img {
   width: 100%;
 }
+
+#gold-series-view,
+#hidden-arsenal-view {
+  display: none;
+}
