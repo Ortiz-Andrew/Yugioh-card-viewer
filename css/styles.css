@@ -1,0 +1,104 @@
+.hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 900px;
+  }
+
+  .column-full,
+  .column-half {
+    padding: 0 0.75rem;
+    flex-basis: calc(100% / 8);
+  }
+
+  .column-half {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .column-full,
+  .column-half {
+    flex-basis: calc(100% / 3);
+  }
+}
+
+body {
+  background-color: #321111;
+}
+
+header {
+  background-color: black;
+}
+
+.card-picker {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.favorites {
+  display: flex;
+  color: white;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#yugioh-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+.pick-card-set {
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+
+.gs-sets {
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+
+.ha4-set {
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+
+.gold-series {
+  color: white;
+  text-decoration: none;
+}
+
+.hidden-aresenal {
+  color: white;
+  text-decoration: none;
+}
+
+#gold-series-view {
+  color: white;
+}
+
+#hidden-arsenal-view {
+  color: white;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 100%;
+}
+
+#gold-series-view,
+#hidden-arsenal-view {
+  display: none;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,39 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header>
+    <div class="container">
+      <div class="row-title">
+        <div class="column-full-title">
+          <img src="./images/298811.png" id="yugioh-logo" alt="yugioh logo">
+          <h1 class="card-picker">card picker</h1>
+          <a href="#" class="favorites">Favorites</a>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
+    <div class="pick-card-set">
+      <h2>Pick your card set</h2>
+    </div>
+    <div class="gs-sets">
+      <a href="#" class="gold-series" id="gold-series-link">Gold Series 2009</a>
+    </div>
+    <div class="ha4-set">
+      <a href="#" class="hidden-aresenal" id="hidden-arsenal-link">Hidden Arsenal 4: Trishula's Triumph</a>
+    </div>
+    <div data-view="entries" class="entries">
+      <div id="gold-series-view">
+
+      </div>
+      <div id="hidden-arsenal-view" class="hidden-arsenal">
+      </div>
+      <div>
+        <ul class="entry-list"></ul>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
