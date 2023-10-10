@@ -10,10 +10,18 @@
   .column-full,
   .column-half {
     padding: 0 0.75rem;
+    flex-basis: calc(100% / 8);
   }
 
   .column-half {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .column-full,
+  .column-half {
+    flex-basis: calc(100% / 3);
   }
 }
 

@@ -1,7 +1,7 @@
 const goldSeriesLink = document.getElementById('gold-series-link');
 const hiddenArsenalLink = document.getElementById('hidden-arsenal-link');
 const $goldSeriesView = document.getElementById('gold-series-view');
-/* const hiddenArsenalView = document.getElementById('hidden-arsenal-view'); */
+const hiddenArsenalView = document.getElementById('hidden-arsenal-view');
 
 goldSeriesLink.addEventListener('click', function (event) {
   event.preventDefault();
@@ -11,6 +11,7 @@ goldSeriesLink.addEventListener('click', function (event) {
 hiddenArsenalLink.addEventListener('click', function (event) {
   event.preventDefault();
   $goldSeriesView.textContent = '';
+  renderHiddenArsenal(HiddenArsenalData);
 });
 
 const GoldSeriesData = {
@@ -102,4 +103,97 @@ function renderGoldSeries(goldSeries) {
 
   $goldSeriesView.appendChild($goldSeriesList);
   return $goldSeriesList;
+}
+
+const HiddenArsenalData = {
+  id: 1,
+  title: 'Hidden Arsenal 4: Trishulas Triumph',
+  photos: [
+    './images/Hidden Arsenal 4/Ancient Flamvell Deity.jpg',
+    './images/Hidden Arsenal 4/Defender of the Ice Barrier.jpg',
+    './images/Hidden Arsenal 4/Dragunity Angusticlavii.jpg',
+    './images/Hidden Arsenal 4/Dragunity Brandistock.jpg',
+    './images/Hidden Arsenal 4/Dragunity Corsesca.jpg',
+    './images/Hidden Arsenal 4/Dragunity Javelin.jpg',
+    './images/Hidden Arsenal 4/Dragunity Knight - Barcha.jpg',
+    './images/Hidden Arsenal 4/Dragunity Knight - Trident.jpg',
+    './images/Hidden Arsenal 4/Dragunity Militum.jpg',
+    './images/Hidden Arsenal 4/Dragunity Partisan.jpg',
+    './images/Hidden Arsenal 4/Fabled Dianaira.jpg',
+    './images/Hidden Arsenal 4/General Gantala of the Ice Barrier.jpg',
+    './images/Hidden Arsenal 4/General Raiho of the Ice Barrier.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Bellflame.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Birdman.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Changer.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Chemistrer.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Crusher.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Powercell.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Reliever.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Remote.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Solid.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Triforce.jpg',
+    './images/Hidden Arsenal 4/Genex Ally Volcannon.jpg',
+    './images/Hidden Arsenal 4/Jurrac Aeolo.jpg',
+    './images/Hidden Arsenal 4/Jurrac Dino.jpg',
+    './images/Hidden Arsenal 4/Jurrac Gallim.jpg',
+    './images/Hidden Arsenal 4/Jurrac Herra.jpg',
+    './images/Hidden Arsenal 4/Jurrac Meteor.jpg',
+    './images/Hidden Arsenal 4/Naturia Butterfly.jpg',
+    './images/Hidden Arsenal 4/Naturia Exterio.jpg',
+    './images/Hidden Arsenal 4/Naturia Ladybug.jpg',
+    './images/Hidden Arsenal 4/Naturia Landoise.jpg',
+    './images/Hidden Arsenal 4/Naturia Mantis.jpg',
+    './images/Hidden Arsenal 4/Naturia Ragweed.jpg',
+    './images/Hidden Arsenal 4/Naturia Stinkbug.jpg',
+    './images/Hidden Arsenal 4/Naturia Strawberry.jpg',
+    './images/Hidden Arsenal 4/Naturia White Oak.jpg',
+    './images/Hidden Arsenal 4/Neo Flamvell Garuda.jpg',
+    './images/Hidden Arsenal 4/Neo Flamvell Hedgehog.jpg',
+    './images/Hidden Arsenal 4/Neo Flamvell Sabre.jpg',
+    './images/Hidden Arsenal 4/Neo Flamvell Origin.jpg',
+    './images/Hidden Arsenal 4/Neo Flamvell Shaman.jpg',
+    './images/Hidden Arsenal 4/Sacred Spirit of the Ice Barrier.jpg',
+    './images/Hidden Arsenal 4/Secret Guards of the Ice Barrier.jpg',
+    './images/Hidden Arsenal 4/the Fabled Catsith.jpg',
+    './images/Hidden Arsenal 4/the Fabled Cerburrel.jpg',
+    './images/Hidden Arsenal 4/the Fabled Chawa.jpg',
+    './images/Hidden Arsenal 4/the Fabled Ganashia.jpg',
+    './images/Hidden Arsenal 4/the Fabled Kokkator.jpg',
+    './images/Hidden Arsenal 4/the Fabled Nozoochee.jpg',
+    './images/Hidden Arsenal 4/the Fabled Peggulsus.jpg',
+    './images/Hidden Arsenal 4/the Fabled Unicore.jpg',
+    './images/Hidden Arsenal 4/Trishula, Dragon of the Ice Barrier.jpg',
+    './images/Hidden Arsenal 4/Warlock of the Ice Barrier.jpg'
+  ]
+};
+/* renderHiddenArsenal(HiddenArsenalData); */
+
+function renderHiddenArsenal(hiddenArsenal) {
+  const h1Entry = document.createElement('h1');
+  h1Entry.textContent = hiddenArsenal.title;
+
+  const titleWrapper = document.createElement('div');
+  titleWrapper.setAttribute('class', 'title-wrapper');
+
+  titleWrapper.appendChild(h1Entry);
+  hiddenArsenalView.appendChild(titleWrapper);
+
+  const hiddenArsenalList = document.createElement('div');
+  hiddenArsenalList.className = 'row';
+  hiddenArsenalList.setAttribute('data-hidden-arsenal-id', hiddenArsenal.id);
+
+  if (Array.isArray(hiddenArsenal.photos)) {
+    hiddenArsenal.photos.forEach(photoUrl => {
+      const imgDiv = document.createElement('div');
+      imgDiv.className = 'column-full column-one-third';
+
+      const hiddenArsenalImg = document.createElement('img');
+      hiddenArsenalImg.setAttribute('src', photoUrl);
+      hiddenArsenalImg.setAttribute('alt', hiddenArsenal.title);
+      imgDiv.appendChild(hiddenArsenalImg);
+      hiddenArsenalList.appendChild(imgDiv);
+    });
+  }
+
+  hiddenArsenalView.appendChild(hiddenArsenalList);
 }
